@@ -1,0 +1,43 @@
+[
+    {
+        "COVID-19": {
+            "population_size": 1000,
+            "initial_infected": 10,
+            "infection_rate": 0.03,
+            "recovery_rate": 0.01,
+            "death_rate": 0.002,
+            "vaccination_rate": 0.005,
+            "incubation_period": 5,
+            "quarantine_effectiveness": 0.7,
+            "quarantine_start_day": 30,
+            "quarantine_duration": 50,
+            "simulation_duration": 100
+        },
+        "Black Plague": {
+            "population_size": 1000,
+            "initial_infected": 10,
+            "infection_rate": 0.2,
+            "recovery_rate": 0.005,
+            "death_rate": 0.1,
+            "vaccination_rate": 0.0,
+            "incubation_period": 3,
+            "quarantine_effectiveness": 0.2,
+            "quarantine_start_day": 20,
+            "quarantine_duration": 80,
+            "simulation_duration": 100
+        },
+        "Abdur_test": {
+            "population_size": 5000,
+            "initial_infected": 145,
+            "infection_rate": 0.21,
+            "recovery_rate": 0.085,
+            "death_rate": 0.005,
+            "vaccination_rate": 0.015,
+            "incubation_period": 3,
+            "quarantine_effectiveness": 0.34,
+            "quarantine_start_day": 6,
+            "quarantine_duration": 7,
+            "simulation_duration": 50
+        }
+    }
+]
