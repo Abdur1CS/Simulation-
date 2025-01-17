@@ -1,0 +1,121 @@
+[
+    {
+        "COVID-19": {
+            "population_size": 1000,
+            "initial_infected": 10,
+            "infection_rate": 0.03,
+            "recovery_rate": 0.01,
+            "death_rate": 0.002,
+            "vaccination_rate": 0.005,
+            "incubation_period": 5,
+            "quarantine_effectiveness": 0.7,
+            "quarantine_start_day": 30,
+            "quarantine_duration": 50,
+            "simulation_duration": 100
+        },
+        "Black Plague": {
+            "population_size": 1000,
+            "initial_infected": 10,
+            "infection_rate": 0.2,
+            "recovery_rate": 0.005,
+            "death_rate": 0.1,
+            "vaccination_rate": 0.0,
+            "incubation_period": 3,
+            "quarantine_effectiveness": 0.2,
+            "quarantine_start_day": 20,
+            "quarantine_duration": 80,
+            "simulation_duration": 100
+        },
+        "Polio": {
+            "population_size": 1000,
+            "initial_infected": 5,
+            "infection_rate": 0.01,
+            "recovery_rate": 0.03,
+            "death_rate": 0.001,
+            "vaccination_rate": 0.02,
+            "incubation_period": 6,
+            "quarantine_effectiveness": 0.3,
+            "quarantine_start_day": 10,
+            "quarantine_duration": 30,
+            "simulation_duration": 100
+        },
+        "Smallpox": {
+            "population_size": 1000,
+            "initial_infected": 5,
+            "infection_rate": 0.07,
+            "recovery_rate": 0.01,
+            "death_rate": 0.3,
+            "vaccination_rate": 0.01,
+            "incubation_period": 12,
+            "quarantine_effectiveness": 0.6,
+            "quarantine_start_day": 15,
+            "quarantine_duration": 40,
+            "simulation_duration": 100
+        },
+        "Measles": {
+            "population_size": 1000,
+            "initial_infected": 5,
+            "infection_rate": 0.15,
+            "recovery_rate": 0.05,
+            "death_rate": 0.001,
+            "vaccination_rate": 0.05,
+            "incubation_period": 10,
+            "quarantine_effectiveness": 0.7,
+            "quarantine_start_day": 5,
+            "quarantine_duration": 25,
+            "simulation_duration": 100
+        },
+        "Cholera": {
+            "population_size": 1000,
+            "initial_infected": 10,
+            "infection_rate": 0.1,
+            "recovery_rate": 0.02,
+            "death_rate": 0.05,
+            "vaccination_rate": 0.001,
+            "incubation_period": 2,
+            "quarantine_effectiveness": 0.5,
+            "quarantine_start_day": 5,
+            "quarantine_duration": 20,
+            "simulation_duration": 100
+        },
+        "Spanish Flu": {
+            "population_size": 1000,
+            "initial_infected": 20,
+            "infection_rate": 0.1,
+            "recovery_rate": 0.02,
+            "death_rate": 0.02,
+            "vaccination_rate": 0.0,
+            "incubation_period": 2,
+            "quarantine_effectiveness": 0.3,
+            "quarantine_start_day": 5,
+            "quarantine_duration": 30,
+            "simulation_duration": 100
+        },
+        "HIV/AIDS": {
+            "population_size": 1000,
+            "initial_infected": 5,
+            "infection_rate": 0.001,
+            "recovery_rate": 0.0005,
+            "death_rate": 0.02,
+            "vaccination_rate": 0.0,
+            "incubation_period": 365,
+            "quarantine_effectiveness": 0.0,
+            "quarantine_start_day": 0,
+            "quarantine_duration": 0,
+            "simulation_duration": 100
+        },
+        "Ebola": {
+            "population_size": 1000,
+            "initial_infected": 5,
+            "infection_rate": 0.08,
+            "recovery_rate": 0.02,
+            "death_rate": 0.5,
+            "vaccination_rate": 0.001,
+            "incubation_period": 5,
+            "quarantine_effectiveness": 0.9,
+            "quarantine_start_day": 2,
+            "quarantine_duration": 30,
+            "simulation_duration": 100
+        }
+    }
+]
