@@ -1,8 +1,3 @@
-# Epidemic Spread Simulation
-This was Started in June 2024
-
-This is my epidemic simulation i have made for computer science AQA A LEVEL
-
 KEY : 
     ✅ = Finished and completed
     ❓ = I might do it idk yet
@@ -20,6 +15,11 @@ Make it An animation so it shows how it goes from one point to another and it do
 optimise it so it runs faster ⌛❓
 
 make a GUI for it ⌛
+
+
+
+
+
 
 
 
