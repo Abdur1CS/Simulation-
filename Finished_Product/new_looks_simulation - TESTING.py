@@ -41,26 +41,26 @@ def initializeThedata():
     }
 #---------- SIMULATION LOOP ----------
 def simulationOfTheloop(params, population):
-    data = initializeThedata()
-    for day in range(params['simulation_duration']):
+    data = initializeThedata()  # getting the data from the json file 
+    for day in range(params['simulation_duration']):  # looping through every day of the simulation 
         for person in population:
             if person['status'] == 'infected':
-                person['days_infected'] += 1
+                person['days_infected'] += 1 # increase the number of days they have been effected 
                 if person['days_infected'] > params['incubation_period']:
-                    effective_infection_rate = params['infection_rate']
+                    effective_infection_rate = params['infection_rate'] # if they finish the incubation period they can still effect other people 
                     if params['quarantine_start_day'] <= day < params['quarantine_start_day'] + params['quarantine_duration']:
                         effective_infection_rate *= params['quarantine_effectiveness']
-                    for other in population:
+                    for other in population: # trying to infect new people 
                         if other['status'] == 'susceptible' and random.random() < effective_infection_rate:
                             other['status'] = 'infected'
-                            other['days_infected'] = 0
+                            other['days_infected'] = 0 # here it resets the days infected for the new infected people 
                 if random.random() < params['recovery_rate']:
                     person['status'] = 'recovered'
                 elif random.random() < params['death_rate']:
                     person['status'] = 'deceased'
             elif person['status'] == 'susceptible' and random.random() < params['vaccination_rate']:
                 person['status'] = 'recovered'
-
+        # here it records the daily count for each of the difference cattergories 
         data['susceptible_count'].append(sum(1 for p in population if p['status'] == 'susceptible'))
         data['infected_count'].append(sum(1 for p in population if p['status'] == 'infected'))
         data['recovered_count'].append(sum(1 for p in population if p['status'] == 'recovered'))
@@ -89,6 +89,8 @@ def get_params(epidemic_name):
     params = epidemics[epidemic_name].copy()
     params['name'] = epidemic_name
     return params
+
+#---------- SIMULATION LOOP ----------
 
 def start_simulation(single_epidemic=True):
     comparisonData = []
@@ -149,6 +151,8 @@ def update_epidemic_choices():
     epidemic_choice1.configure(values=list(epidemics.keys()))
     epidemic_choice2.configure(values=list(epidemics.keys()))
 
+# ---------- GUI Setup ----------
+
 def show_main_menu():
     login_frame.pack_forget()
     menu_frame.pack(expand=True)
@@ -161,18 +165,18 @@ def login():
     else:
         messagebox.showerror("Login Failed", "Incorrect username or password")
 
-# ---------- GUI Setup ----------
+
 app = ctk.CTk()
 app.title("Epidemic Simulation")
 app.geometry("800x500")
 
-# Background image
+# Background image for the app 
 bg_img = Image.open(BACKGROUND_IMAGE_PATH)
 bg_photo = ImageTk.PhotoImage(bg_img)
 bg_label = ctk.CTkLabel(master=app, image=bg_photo, text="")
 bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-# Login Frame
+# Login window 
 login_frame = ctk.CTkFrame(master=app, fg_color=("#222222", "#222222"), corner_radius=15)
 login_frame.pack(expand=True)
 ctk.CTkLabel(login_frame, text="Login", font=("Arial", 24)).pack(pady=10)
@@ -182,7 +186,7 @@ password_entry = ctk.CTkEntry(login_frame, placeholder_text="Password", show="*"
 password_entry.pack(pady=5)
 ctk.CTkButton(login_frame, text="Login", command=login).pack(pady=10)
 
-# Main Menu Frame
+# Main Menu window 
 menu_frame = ctk.CTkFrame(master=app, fg_color=("#222222", "#222222"), corner_radius=15)
 
 ctk.CTkLabel(menu_frame, text="Main Menu", font=("Arial", 24)).pack(pady=10)
@@ -190,7 +194,7 @@ ctk.CTkButton(menu_frame, text="Create Custom Epidemic", command=create_custom_e
 ctk.CTkButton(menu_frame, text="Simulate One Epidemic", command=lambda: [menu_frame.pack_forget(), simulation_frame.pack(expand=True)]).pack(pady=5)
 ctk.CTkButton(menu_frame, text="Compare Two Epidemics", command=lambda: [menu_frame.pack_forget(), comparison_frame.pack(expand=True)]).pack(pady=5)
 
-# Simulation Frame
+# Simulation Window 
 simulation_frame = ctk.CTkFrame(master=app, fg_color=("#222222", "#222222"), corner_radius=15)
 ctk.CTkLabel(simulation_frame, text="Simulate Epidemic", font=("Arial", 24)).pack(pady=10)
 country_choice = ctk.CTkComboBox(master=simulation_frame, values=list(country_parameters.keys()))
@@ -200,7 +204,7 @@ epidemic_choice.pack(pady=5)
 ctk.CTkButton(master=simulation_frame, text="Run Simulation", command=lambda: start_simulation(True)).pack(pady=10)
 ctk.CTkButton(simulation_frame, text="Back to Menu", command=lambda: [simulation_frame.pack_forget(), menu_frame.pack(expand=True)]).pack(pady=5)
 
-# Comparison Frame
+# Comparison window 
 comparison_frame = ctk.CTkFrame(master=app, fg_color=("#222222", "#222222"), corner_radius=15)
 ctk.CTkLabel(comparison_frame, text="Compare Epidemics", font=("Arial", 24)).pack(pady=10)
 epidemic_choice1 = ctk.CTkComboBox(master=comparison_frame, values=list(epidemics.keys()))
